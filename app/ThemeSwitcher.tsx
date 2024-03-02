@@ -16,11 +16,14 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div>
+    <div className="text-[35px]">
       {theme === "dark" ? (
-        <FiSun className="text-[35px]" onClick={() => setTheme("light")} />
+        <FiSun
+          className="text-heading_white"
+          onClick={() => setTheme("light")}
+        />
       ) : (
-        <FiMoon className="text-[35px]" onClick={() => setTheme("dark")} />
+        <FiMoon className="text-black" onClick={() => setTheme("dark")} />
       )}
     </div>
   );

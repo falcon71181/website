@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ThemeSwitcher from "./ThemeSwitcher";
+import NavBar from "@/components/NavBar";
 import Providers from "./Providers";
 import "./globals.css";
 
@@ -17,9 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <section className="h-screen w-screen flex justify-center">
-            <main className="h-full w-5/6 flex flex-col">
-              <ThemeSwitcher />
+          <section className="h-screen w-screen flex justify-center bg-background_light dark:bg-background_dark">
+            <main className="h-full w-8/12 flex flex-col">
+              <NavBar />
               {children}
             </main>
           </section>
