@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/nav/NavBar";
 import Providers from "./Providers";
 import gradientImg from "@/public/images/gradient.webp";
 import Image from "next/image";
@@ -20,13 +20,13 @@ export default function RootLayout({
       <body>
         <Providers>
           <section className="h-screen w-screen flex justify-center">
-            <main className="h-full w-8/12 flex flex-col">
+            <main className="h-full w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 flex flex-col transition-all duration-500">
               <NavBar />
               {children}
             </main>
           </section>
           <Image
-            className="absolute left-0 md:left-1/2 top-0 -z-50 -translate-x-1/2 lg:scale-100 object-cover w-full"
+            className="absolute left-1/2 md:left-1/2 top-0 -z-50 -translate-x-1/2 lg:scale-100 object-cover w-full"
             src={gradientImg}
             role="presenation"
             alt="Gradient background"
