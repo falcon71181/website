@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Providers from "./Providers";
+import gradientImg from "@/public/images/gradient.webp";
+import Image from "next/image";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,12 +19,19 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <section className="h-screen w-screen flex justify-center bg-background_light dark:bg-background_dark">
+          <section className="h-screen w-screen flex justify-center">
             <main className="h-full w-8/12 flex flex-col">
               <NavBar />
               {children}
             </main>
           </section>
+          <Image
+            className="absolute left-0 md:left-1/2 top-0 -z-50 -translate-x-1/2 lg:scale-100 object-cover w-full"
+            src={gradientImg}
+            role="presenation"
+            alt="Gradient background"
+            priority
+          />
         </Providers>
       </body>
     </html>

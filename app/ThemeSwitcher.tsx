@@ -16,7 +16,7 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="text-[35px]">
+    <div className="text-[28px] cursor-pointer">
       {theme === "dark" ? (
         <FiSun
           className="text-heading_white"
