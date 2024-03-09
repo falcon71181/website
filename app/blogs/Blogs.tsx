@@ -26,14 +26,14 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
       <div className="flex flex-col">
         <Link
           href="/"
-          className="flex flex-row space-x-2 items-center md:px-6 group cursor-pointer mb-4"
+          className="flex flex-row space-x-2 items-center text-gray-700 dark:text-title_dark md:px-6 group cursor-pointer mb-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
             viewBox="0 0 16 16"
-            className="text-title_dark group-hover:-translate-x-1 duration-200 rotate-180"
+            className="group-hover:-translate-x-1 duration-200 rotate-180"
           >
             <path
               fill="currentColor"
@@ -42,7 +42,7 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
               clipRule="evenodd"
             />
           </svg>
-          <span className="dark:text-title_dark">Back</span>
+          <span>Back</span>
         </Link>
         <span className="text-2xl md:text-3xl lg:text-4xl font-bold md:px-6 mb-2 sm:mb-3 lg:mb-6 md:mb-4 transition-all duration-500">
           All Blogs
@@ -59,22 +59,20 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
           ))}
         </div>
 
-        <div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-1 md:px-2 transition-all duration-500">
-            {filteredPosts
-              .sort((a: any, b: any) => {
-                if (
-                  new Date(a.metadata.publishedAt) >
-                  new Date(b.metadata.publishedAt)
-                ) {
-                  return -1;
-                }
-                return 1;
-              })
-              .map((post: any, index: number) => {
-                return <BlogCard key={index} post={post} />;
-              })}
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-1 md:px-2 transition-all duration-500">
+          {filteredPosts
+            .sort((a: any, b: any) => {
+              if (
+                new Date(a.metadata.publishedAt) >
+                new Date(b.metadata.publishedAt)
+              ) {
+                return -1;
+              }
+              return 1;
+            })
+            .map((post: any, index: number) => {
+              return <BlogCard key={index} post={post} />;
+            })}
         </div>
       </div>
     </div>
