@@ -14,6 +14,8 @@ const config: Config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        black_darker: "#6C7072",
+        title_dark: "#D8D8D8",
         heading: "#e5e7eb",
         hover_heading: "#d9d9d9",
         hover_links_dark: "#fa4103",
