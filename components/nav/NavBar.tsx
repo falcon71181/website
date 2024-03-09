@@ -8,7 +8,7 @@ type navItem = {
 };
 
 const navItems: navItem[] = [
-  { name: "blog", href: "/blog", target: "_self" },
+  { name: "blog", href: "/blogs", target: "_self" },
   { name: "resume", href: "/resume.pdf", target: "_blank" },
 ];
 
