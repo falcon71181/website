@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@next/mdx": "^14.1.3",
     "fs": "^0.0.1-security",
     "next": "14.1.0",
+    "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "path": "^0.12.7",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "rehype-prism-plus": "^2.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
