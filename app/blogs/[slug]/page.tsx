@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { CustomMDX } from '@/components/blogs/mdx';
 import { getPosts } from '@/lib/blogs';
 import { reformatDate } from '@/lib/utils';
+import "@/app/mdx.css";
 
 export const revalidate = 0;
 
@@ -79,7 +80,7 @@ export default async function Blog({ params }: { params: any }) {
           <span>Back</span>
         </Link>
       </div>
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+      <h1 className="title font-medium text-2xl md:text-3xl tracking-tighter max-w-[650px]">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">

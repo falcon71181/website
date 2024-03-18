@@ -2,10 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply transition-all duration-200;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply dark:text-[#e8e6e3] my-3 lg:my-4 xl:my-5 leading-7 lg:leading-8 xl:leading-9;
+}
+
+p,
+li {
+  @apply dark:text-[#e8e6e3] my-2 lg:my-3;
+}
+
+p {
+  @apply text-neutral-700 dark:text-zinc-300 text-[1em] lg:text-[1.1em] xl:text-[1.17em];
+}
+
+h1 {
+  @apply text-[1.5em] lg:text-[1.7em] xl:text-[2em];
+}
+
+h2 {
+  @apply text-[1.3em] lg:text-[1.4em] xl:text-[1.5em];
+}
+
+h3 {
+  @apply text-[1em] lg:text-[1.1em] xl:text-[1.17em];
+}
+
+h4 {
+  @apply text-[0.8em] lg:text-[1em] xl:text-[1.17em];
+}
+
 pre[class*='language-'] {
-  color: theme('colors.zinc.50');
+
   margin-top: 0rem !important;
-  @apply px-4 overflow-x-auto;
+  @apply px-4 overflow-x-auto text-zinc-50;
 }
 
 .token.tag,
@@ -41,8 +77,7 @@ pre[class*='language-'] {
   color: theme('colors.teal.300');
 }
 
-.token.punctuation,
-.token.attr-equals {
+.token.punctuation .token.attr-equals {
   color: theme('colors.zinc.500');
 }
 
@@ -60,6 +95,15 @@ pre[class*='language-'] {
 .token.operator,
 .token.combinator {
   color: theme('colors.zinc.400');
+}
+
+.code-highlight .line-number {
+  @apply text-black dark:text-zinc-300;
+}
+
+.code-highlight .highlight-line {
+  background: theme('colors.zinc.900');
+  @apply text-zinc-300;
 }
 
 .code-highlight {
@@ -106,7 +150,7 @@ pre[class*='language-'] {
   text-align: right;
   margin-right: 16px;
   margin-left: -8px;
-  color: theme('colors.zinc.500');
+  @apply text-zinc-500;
   content: attr(line);
 }
 
