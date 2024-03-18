@@ -24,7 +24,7 @@ const CopyButton = ({ text }: { text: any }) => {
       disabled={isCopied}
       onClick={copy}
     >
-      <Icon className="h-4 w-4" />
+      <Icon className="h-4 w-4 text-white" />
     </button>
   );
 }
