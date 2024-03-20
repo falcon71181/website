@@ -22,7 +22,7 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
   ];
 
   return (
-    <div className="w-full h-full grid grid-cols-1 gap-10 p-3 border-2 border-blue-300">
+    <div className="w-full h-full grid grid-cols-1 p-3">
       <div className="flex flex-col">
         <Link
           href="/"
@@ -59,7 +59,7 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-1 md:px-2 transition-all duration-500">
+        <div className="mx-2 sm:mx-4 md:mx-6 lg:mx-8 grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-3 md:px-2 transition-all duration-500">
           {filteredPosts
             .sort((a: any, b: any) => {
               if (

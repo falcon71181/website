@@ -51,5 +51,5 @@ function getMDXData(dir: any) {
 }
 
 export function getPosts() {
-  return getMDXData(path.join(process.cwd(), "posts"));
+  return getMDXData(path.join(process.cwd(), "content"));
 }

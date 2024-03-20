@@ -27,7 +27,7 @@ const NavBar = () => {
             key={name + href}
             href={href}
             target={target}
-            className="text-black dark:text-white text-lg md:text-xl font-medium hover:text-hover_link_light dark:hover:text-hover_heading transition-all duration-500"
+            className="text-black dark:text-white text-lg md:text-xl font-medium hover:text-hover_link_light dark:hover:text-white_light transition-all duration-500"
           >
             {name}
           </Link>

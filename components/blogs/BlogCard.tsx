@@ -15,7 +15,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
     <Link
       key={post.slug}
       href={`/blogs/${post.slug}`}
-      className="group flex flex-row justify-between items-center p-2 md:p-4 rounded-lg cursor-pointer border-[0.1px] border-gray-500 hover:border-hover_link_light dark:border-gray-700 hover:dark:border-gray-300 transition-all duration-500"
+      className="group flex flex-row justify-between items-center p-2 md:p-4 rounded-lg backdrop-grayscale cursor-pointer border-[0.1px] border-gray-500 hover:border-hover_link_light dark:border-gray-700 hover:dark:border-gray-300 transition-all duration-500"
     >
       <div className="flex flex-col space-y-2">
         <span className="text-black dark:text-title_dark">
