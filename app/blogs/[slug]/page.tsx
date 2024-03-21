@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { CustomMDX } from '@/components/blogs/mdx';
 import { getPosts } from '@/lib/blogs';
 import { reformatDate } from '@/lib/utils';
+import { TracingBeam } from '@/components/ui/tracing-beam';
 import "@/app/mdx.css";
 
 export const revalidate = 0;
@@ -57,7 +58,7 @@ export default async function Blog({ params }: { params: any }) {
     notFound();
   }
   return (
-    <div className='w-full p-5'>
+    <div className='w-full p-3'>
       <div className="flex flex-row mb-3 text-sm text-secondaryDarker">
         <Link
           href="/blogs"
@@ -80,19 +81,21 @@ export default async function Blog({ params }: { params: any }) {
           <span>Back</span>
         </Link>
       </div>
-      <h1 className="title font-medium text-2xl md:text-3xl tracking-tighter max-w-[650px]">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <div className="flex flex-row space-x-2 items-center text-secondaryDarker">
-          <span>{reformatDate(post.metadata.publishedAt)}</span>
-          <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
-          <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
+      <TracingBeam>
+        <h1 className="title font-medium text-2xl md:text-3xl tracking-tighter max-w-[650px]">
+          {post.metadata.title}
+        </h1>
+        <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
+          <div className="flex flex-row space-x-2 items-center text-secondaryDarker">
+            <span>{reformatDate(post.metadata.publishedAt)}</span>
+            <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
+            <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
+          </div>
         </div>
-      </div>
-      <article className="prose prose-invert pb-10">
-        <CustomMDX source={post.content} />
-      </article>
+        <article className="prose prose-invert pb-10">
+          <CustomMDX source={post.content} />
+        </article>
+      </TracingBeam>
     </div>
   );
 }
