@@ -58,11 +58,11 @@ export default async function Blog({ params }: { params: any }) {
     notFound();
   }
   return (
-    <div className='w-full p-3'>
-      <div className="flex flex-row mb-3 text-sm text-secondaryDarker">
+    <div className='w-full p-3 mt-1'>
+      <div className="flex text-sm text-secondaryDarker">
         <Link
           href="/blogs"
-          className="flex flex-row space-x-2 items-center text-gray-700 dark:text-title_dark md:px-6 group cursor-pointer mb-4"
+          className="flex flex-row text-lg space-x-2 items-center text-gray-700 dark:text-title_dark md:px-6 group cursor-pointer mb-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export default async function Blog({ params }: { params: any }) {
           <span>Back</span>
         </Link>
       </div>
-      <TracingBeam>
+      <TracingBeam className='px-0 md:px-6 transition-all duration-150'>
         <h1 className="title font-medium text-2xl md:text-3xl tracking-tighter max-w-[650px]">
           {post.metadata.title}
         </h1>
@@ -92,6 +92,7 @@ export default async function Blog({ params }: { params: any }) {
             <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
           </div>
         </div>
+        <hr />
         <article className="prose prose-invert pb-10">
           <CustomMDX source={post.content} />
         </article>

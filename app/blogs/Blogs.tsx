@@ -22,11 +22,11 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
   ];
 
   return (
-    <div className="w-full h-full grid grid-cols-1 p-3">
+    <div className="w-full h-full grid grid-cols-1 p-3 mt-1">
       <div className="flex flex-col">
         <Link
           href="/"
-          className="flex flex-row space-x-2 items-center text-gray-700 dark:text-title_dark md:px-6 group cursor-pointer mb-4"
+          className="flex flex-row text-lg space-x-2 items-center text-gray-700 dark:text-title_dark md:px-6 group cursor-pointer mb-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
