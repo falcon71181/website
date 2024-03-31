@@ -13,6 +13,7 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
     ? allPosts.filter((post: any) => post.metadata.tag.includes(filter_tag))
     : allPosts;
 
+  // TODO: Hide tags that has no Blog posts
   const tags = [
     { name: "All", href: "/blogs", tag: null },
     { name: "Anime", href: "/blogs?tag=anime", tag: "anime" },
