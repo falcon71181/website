@@ -42,12 +42,6 @@ export async function generateMetadata({
         },
       ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: metadata.title,
-      description: metadata.summary,
-      images: [ogImage],
-    },
   };
 }
 
@@ -92,7 +86,7 @@ export default async function Blog({ params }: { params: any }) {
             <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
           </div>
         </div>
-        <hr />
+        <hr className='h-[1px] my-1 sm:my-3 lg:my-5 bg-black border-0 rounded dark:bg-zinc-200'></hr>
         <article className="prose prose-invert pb-10">
           <CustomMDX source={post.content} />
         </article>
