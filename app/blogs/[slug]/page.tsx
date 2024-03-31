@@ -31,17 +31,6 @@ export async function generateMetadata({
   return {
     title: metadata.title,
     description: metadata.summary,
-    openGraph: {
-      title: metadata.title,
-      description: metadata.summary,
-      type: 'article',
-      url: `${CLIENT}/posts/${slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
-    },
   };
 }
 
@@ -75,7 +64,7 @@ export default async function Blog({ params }: { params: any }) {
           <span>Back</span>
         </Link>
       </div>
-      <TracingBeam className='px-0 md:px-6 transition-all duration-150'>
+      <TracingBeam className='blogPage px-0 md:px-6 transition-all duration-150'>
         <h1 className="title font-medium text-2xl md:text-3xl tracking-tighter max-w-[650px]">
           {post.metadata.title}
         </h1>

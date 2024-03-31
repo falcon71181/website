@@ -2,52 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+.blogPage * {
   @apply transition-all duration-100;
 }
 
-h1,
+.blogPage a {
+  @apply text-link-blue dark:text-link hover:underline;
+  text-shadow: 0 0 25px rgba(248, 178, 87, 0.5);
+  text-decoration: none;
+}
+
+.blogPage h1,
 h2,
 h3,
 h4 {
   @apply dark:text-[#e8e6e3] my-3 lg:my-4 xl:my-5 leading-7 lg:leading-8 xl:leading-9 font-semibold;
 }
 
-p,
+.blogPage p,
 li {
   @apply dark:text-[#e8e6e3] my-2 lg:my-3;
 }
 
-p {
+.blogPage p {
   @apply text-neutral-700 dark:text-zinc-300 text-[1em] lg:text-[1.1em] xl:text-[1.17em];
 }
 
-h1 {
+.blogPage h1 {
   @apply text-[1.5em] lg:text-[1.7em] xl:text-[2em];
 }
 
-h2 {
+.blogPage h2 {
   @apply text-[1.3em] lg:text-[1.4em] xl:text-[1.5em];
 }
 
-h3 {
+.blogPage h3 {
   @apply text-[1em] lg:text-[1.1em] xl:text-[1.17em];
 }
 
-h4 {
+.blogPage h4 {
   @apply text-[0.8em] lg:text-[1em] xl:text-[1.17em];
 }
 
-h1.title {
+.blogPage h1.title {
   @apply font-sans font-semibold;
 }
 
-pre[class*='language-'] {
+.blogPage pre[class*='language-'] {
   margin-top: 0rem !important;
   @apply px-4 overflow-x-auto text-zinc-50;
 }
 
-.token.tag,
+.blogPage .token.tag,
 .token.class-name,
 .token.selector,
 .token.selector .class,
@@ -56,7 +62,7 @@ pre[class*='language-'] {
   color: theme('colors.pink.400');
 }
 
-.token.attr-name,
+.blogPage .token.attr-name,
 .token.keyword,
 .token.rule,
 .token.pseudo-class,
@@ -64,51 +70,51 @@ pre[class*='language-'] {
   color: theme('colors.blue.300');
 }
 
-.token.module {
+.blogPage .token.module {
   color: theme('colors.purple.300');
 }
 
-.token.attr-value {
+.blogPage .token.attr-value {
   color: theme('colors.blue.300');
 }
 
-.token.string {
+.blogPage .token.string {
   color: theme('colors.orange.300');
 }
 
-.token.class {
+.blogPage .token.class {
   color: theme('colors.teal.300');
 }
 
-.token.punctuation,
+.blogPage .token.punctuation,
 .token.attr-equals {
   color: theme('colors.zinc.500');
 }
 
-.token.unit,
+.blogPage .token.unit,
 .language-css .token.function {
   color: theme('colors.sky.200');
 }
 
-.token.comment {
+.blogPage .token.comment {
   color: theme('colors.emerald.400');
   opacity: 0.7;
 }
 
-.token.property,
+.blogPage .token.property,
 .token.operator,
 .token.combinator {
   color: theme('colors.zinc.400');
 }
 
-.code-highlight {
+.blogPage .code-highlight {
   float: left;
   /* 1 */
   min-width: 100%;
   /* 2 */
 }
 
-.code-line {
+.blogPage .code-line {
   display: block;
   padding-left: 16px;
   padding-right: 16px;
@@ -119,18 +125,18 @@ pre[class*='language-'] {
   line-height: 1.5rem;
 }
 
-.code-line.inserted {
+.blogPage .code-line.inserted {
   background-color: theme('colors.emerald.900'
     );
   /* Set inserted line (+) color */
 }
 
-.code-line.deleted {
+.blogPage .code-line.deleted {
   background-color: theme('colors.red.900');
   /* Set deleted line (-) color */
 }
 
-.highlight-line {
+.blogPage .highlight-line {
   margin-left: -14px;
   margin-right: -16px;
   background-color: theme('colors.zinc.800');
@@ -139,7 +145,7 @@ pre[class*='language-'] {
   /* Set highlight accent border color */
 }
 
-.line-number::before {
+.blogPage .line-number::before {
   display: inline-block;
   width: 1rem;
   text-align: right;
@@ -149,7 +155,7 @@ pre[class*='language-'] {
   content: attr(line);
 }
 
-.rehype-code-title {
+.blogPage .rehype-code-title {
   margin: 0 !important;
   display: inline-flex;
   position: relative;

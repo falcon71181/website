@@ -22,12 +22,16 @@ const config: Config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        link: {
+          DEFAULT: "#ffa977",
+          saffron: "#ffa977",
+          blue: "#1F66EE"
+        },
         black_darker: "#6C7072",
         title_dark: "#D8D8D8",
         heading: "#e5e7eb",
         white_light: "#d9d9d9",
-        hover_links_dark: "#fa4103",
-        hover_link_light: "#129EE3",
+        hover_link_light: "#1F66EE",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",

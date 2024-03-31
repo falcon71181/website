@@ -13,7 +13,7 @@ export function LinkBadge({ children, className, ...props }: LinkBadgeProps) {
       target="_blank"
       rel="noreferrer"
       className={cn(
-        "rounded-md border border-border bg-muted px-1.5 py-0.5 text-sm no-underline hover:bg-muted/90",
+        "rounded-lg border-[0.1px] border-black backdrop-grayscale px-1.5 py-0.3 text-sm no-underline hover:bg-muted/20 dark:hover:bg-muted/90",
         className
       )}
     >
