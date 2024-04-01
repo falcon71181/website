@@ -7,7 +7,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <main className="px-0 sm:px-2 md:px-5 lg:px-9 w-full h-full text-black dark:text-heading border-2 border-red-300">
+    <main className="px-0 sm:px-2 md:px-5 lg:px-9 w-full h-full flex flex-col items-center text-black dark:text-heading border-2 border-red-300">
       <About />
       <GridCards />
     </main>
