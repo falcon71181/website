@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <main className="grid grid-cols-4 grid-rows-1 gap-4 text-base md:text-lg text-gray-800 dark:text-neutral-300 mx-0 sm:mx-2 md:mx-5 lg:mx-9">
+    <main className="grid grid-cols-4 grid-rows-1 gap-4 text-base md:text-lg text-gray-800 dark:text-neutral-300">
       <div className="flex flex-col gap-2 col-span-4 md:col-span-3">
         <div className="my-3 md:my-5 text-foreground text-lg md:text-xl lg:text-2xl leading-10 transition-all duration-300">
           <h1 className="text-black dark:text-white font-bold">

@@ -1,4 +1,5 @@
 import { About } from "@/components/home/About";
+import { GridCards } from "@/components/home/cards/grid-cards";
 
 export const metadata = {
   title: "falcon71181",
@@ -6,8 +7,9 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <main className="p-3 md:p-4 lg:p-5 w-full h-full text-black dark:text-heading border-2 border-red-300">
+    <main className="px-0 sm:px-2 md:px-5 lg:px-9 w-full h-full text-black dark:text-heading border-2 border-red-300">
       <About />
+      <GridCards />
     </main>
   );
 }
