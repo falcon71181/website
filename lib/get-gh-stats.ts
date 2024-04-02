@@ -69,3 +69,67 @@ export const getGHStats = cache(
   [],
   { revalidate: 86400 }
 );
+export const getGithubContributions = cache(
+  async () => {
+    const gql = String.raw
+    const { user } = await octokit.graphql<{
+      user: {
+        contributionsCollection: {
+          contributionCalendar: {
+            totalContributions: number
+            weeks: {
+              contributionDays: {
+                color: string
+                contributionCount: number
+                date: string
+              }[]
+            }[]
+          }
+        }
+      }
+    }>(
+      gql`
+         query ($login: String!) {
+            user(login: $login) {
+               contributionsCollection {
+                  contributionCalendar {
+                     totalContributions
+                     weeks {
+                        contributionDays {
+                           color
+                           contributionCount
+                           date
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      `,
+      { login: "falcon71181", from: "2020-01-01T00:00:00Z", },
+    )
+    const weeklyContributions =
+      user.contributionsCollection.contributionCalendar.weeks
+
+    // find the day with the highest contribution count.
+    let maxContributionDay = { contributionCount: 0, date: "", color: "" }
+
+    for (let week of weeklyContributions) {
+      for (let day of week.contributionDays) {
+        if (day.contributionCount > maxContributionDay.contributionCount) {
+          maxContributionDay = day
+        }
+      }
+    }
+    const latestContributions = weeklyContributions.slice(-11)
+    const totalContributions =
+      user.contributionsCollection.contributionCalendar.totalContributions
+    return {
+      totalContributions,
+      latestContributions,
+      maxContributionDay,
+    }
+  },
+  [],
+  { revalidate: 86400 }
+);
