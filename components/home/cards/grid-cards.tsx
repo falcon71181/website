@@ -1,15 +1,17 @@
 import { GHLink } from "./gh-link";
 import { SocailsCard } from "./socials-card";
+import { DiscordCard } from "./discord=card";
 
 export const GridCards = () => {
   return (
     <div>
-      <div className="w-full grid md:grid-cols-6 grid-cols-2 mt-8 gap-2 md:gap-3 border border-blue-300">
+      <div className="w-full grid md:grid-cols-6 grid-cols-2 mt-8 gap-2 md:gap-3">
         <div className="col-span-3">
           <GHLink />
         </div>
-        <div className="col-span-3">
+        <div className="col-span-2 space-y-5 py-1.5">
           <SocailsCard />
+          <DiscordCard />
         </div>
       </div>
     </div>
