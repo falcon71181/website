@@ -33,6 +33,13 @@ export const About = () => {
           </LinkBadge>{" "}
           and loving it and got enough frontend knowledge to create websites.
         </p>
+        <p className="leading-6">
+          I use {" "}
+          <LinkBadge href={"https://archlinux.org"} target="_blank" className="text-black dark:text-white font-semibold">
+            <span className="text-neutral-400">/</span>Arch Linux
+          </LinkBadge>{" "}
+          (btw) and strongly support the Free Software Movement. I believe that software should be open and free, with no shady data selling behind the scenes.
+        </p>
       </div>
       <div className="w-full h-full hidden md:flex justify-center items-center md:col-span-1 overflow-hidden">
         <Image
