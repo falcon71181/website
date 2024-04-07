@@ -14,7 +14,7 @@ const navItems: navItem[] = [
 
 const NavBar = () => {
   return (
-    <main className="w-full h-fit flex items-center justify-between">
+    <main className="py-3 w-full h-fit flex items-center justify-between">
       <Link
         href="/"
         className="text-black dark:text-white text-xl md:text-2xl font-semibold tracking-widest transition-all duration-500"
