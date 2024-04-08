@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { getPosts } from "@/lib/blogs";
 import Blogs from "./Blogs";
 
@@ -10,5 +10,9 @@ export const metadata = {
 export default async function PostsPage() {
   let allPosts = getPosts();
 
-  return <Blogs allPosts={allPosts} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Blogs allPosts={allPosts} />
+    </ Suspense>
+  );
 }
