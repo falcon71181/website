@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <main className="grid grid-cols-4 grid-rows-1 gap-4 text-base md:text-lg text-gray-800 dark:text-neutral-300">
       <div className="flex flex-col gap-2 col-span-4 md:col-span-3">
-        <div className="my-3 md:my-5 text-foreground text-lg md:text-xl lg:text-2xl leading-10 transition-all duration-300">
+        <div className="my-3 md:my-4 text-foreground text-lg md:text-xl lg:text-2xl leading-10 transition-all duration-300">
           <h1 className="text-black dark:text-white font-bold">
             Hi, I&apos;m Abhay Thakur ✌️
           </h1>
@@ -31,7 +31,7 @@ export const About = () => {
           <LinkBadge href={"https://www.rust-lang.org"} target="_blank" className="text-black dark:text-white font-semibold">
             <span className="text-neutral-400">/</span>Rust
           </LinkBadge>{" "}
-          and loving it and got enough frontend knowledge to create websites.
+          and loving it and got enough fullstack knowledge to create websites.
         </p>
         <p className="leading-6">
           I use {" "}

@@ -37,6 +37,9 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
       },
+      fontFamily: {
+        handwrite: 'var(--font-caveat)'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

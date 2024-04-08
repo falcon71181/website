@@ -9,7 +9,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-    <main className="px-0 sm:px-2 md:px-5 lg:px-9 w-full min-h-[88vh] flex flex-col items-center text-black dark:text-heading border-2 border-red-300">
+    <main className="px-0 sm:px-2 md:px-5 lg:px-9 w-full flex flex-col gap-3 items-center text-black dark:text-heading">
       <About />
       <GridCards />
       <Projects />
@@ -19,7 +19,7 @@ export default function Home() {
 
 const Projects = () => {
   return (
-    <section className="mt-5 flex flex-col gap-3 transition-all duration-200">
+    <section className="my-2 flex flex-col gap-3">
       <h1 className="font-semibold text-base md:text-xl">Featured Projects :-</h1>
       <div className="sm:px-2 md:px-4 lg:px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {repos.map((repo) => (
