@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Caveat } from 'next/font/google'
+import Script from "next/script";
 import NavBar from "@/components/nav/NavBar";
 import Footer from "@/components/foot/Footer";
 import Providers from "./Providers";
@@ -43,6 +44,11 @@ export default function RootLayout({
             priority
           />
         </Providers>
+        <Script
+          data-goatcounter="https://falcon71181.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></Script>
       </body>
     </html>
   );
