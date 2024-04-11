@@ -18,6 +18,7 @@ export default function Blogs({ allPosts }: { allPosts: any }) {
     { name: "All", href: "/blogs", tag: null },
     { name: "Anime", href: "/blogs?tag=anime", tag: "anime" },
     { name: "Github", href: "/blogs?tag=github", tag: "github" },
+    { name: "HTB", href: "/blogs?tag=htb", tag: "htb" },
     { name: "Personal", href: "/blogs?tag=personal", tag: "personal" },
     { name: "Technical", href: "/blogs?tag=technical", tag: "technical" },
   ];
