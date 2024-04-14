@@ -43,7 +43,7 @@ export const About = () => {
       </div>
       <div className="w-full h-full hidden md:flex justify-center items-center md:col-span-1 overflow-hidden">
         <Image
-          src={"https://avatars.githubusercontent.com/u/48170773"}
+          src={"/images/ProfilePic.png"}
           alt="falcon71181"
           width={200}
           height={200}

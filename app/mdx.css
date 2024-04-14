@@ -6,6 +6,14 @@
   @apply transition-all duration-100;
 }
 
+.blogPage hr {
+  @apply h-[1px] my-1 sm:my-3 lg:my-5 bg-black border-0 rounded dark:bg-zinc-500;
+}
+
+.blogPage ul {
+  @apply list-decimal pl-5;
+}
+
 .blogPage a {
   @apply text-link-blue dark:text-link hover:underline;
   text-shadow: 0 0 25px rgba(248, 178, 87, 0.5);
@@ -107,6 +115,10 @@ li {
   color: theme('colors.zinc.400');
 }
 
+.blogPage code {
+  @apply overflow-x-auto py-2 max-w-[80%];
+}
+
 .blogPage .code-highlight {
   float: left;
   /* 1 */
@@ -168,4 +180,13 @@ li {
   border-radius: 0.5rem 0.5rem 0 0;
   border-top: 4px solid theme('colors.indigo.600');
   font-size: 0.8rem;
+}
+
+.blogPage blockquote {
+  @apply flex items-center my-3 pl-3;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  border-left: 8px solid #78C0A8;
+  line-height: 1.6;
 }

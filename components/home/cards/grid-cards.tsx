@@ -2,6 +2,7 @@ import { GHLink } from "./gh-link";
 import { SocailsCard } from "./socials-card";
 import { DiscordCard } from "./discord=card";
 
+// TODO: Add 1 more card
 export const GridCards = () => {
   return (
     <div>
