@@ -183,7 +183,7 @@ li {
 }
 
 .blogPage blockquote {
-  @apply flex items-center my-3 pl-3;
+  @apply flex items-center my-3 pl-3 max-w-[85%] break-words overflow-x-auto;
   font-family: Open Sans;
   font-style: italic;
   color: #555555;
