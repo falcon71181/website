@@ -31,8 +31,8 @@ export const repos: Repo[] = [
     summary: "Task manager application that allows users to perform CRUD operations.",
   },
   {
-    name: "Blog Page Template",
-    repository: "falcon71181/personal-blog",
-    summary: "Template for a basic blog site.",
+    name: "ToDo-Rust",
+    repository: "falcon71181/ToDo-rust",
+    summary: "A Blazingly fast CLI program to manage todo list.",
   },
 ]
