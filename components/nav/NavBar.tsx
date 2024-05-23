@@ -1,5 +1,12 @@
 import Link from "next/link";
 import ThemeSwitcher from "@/app/ThemeSwitcher";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { TbTriangleInvertedFilled } from "react-icons/tb";
 
 type navItem = {
   name: string;
@@ -27,12 +34,30 @@ const NavBar = () => {
             key={name + href}
             href={href}
             target={target}
-            className="text-black dark:text-white text-lg md:text-xl font-medium hover:text-hover_link_light dark:hover:text-white_light transition-all duration-500"
+            className="hidden sm:block text-black dark:text-white text-lg md:text-xl font-medium hover:text-hover_link_light dark:hover:text-white_light transition-all duration-500"
           >
             {name}
           </Link>
         ))}
         <ThemeSwitcher />
+        <div className="sm:hidden flex items-center">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="group">
+              <TbTriangleInvertedFilled className="group-data-[state=open]:rotate-180 duration-300 cursor-pointer text-xl" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <Link href="/" className="cursor-pointer">
+                <DropdownMenuItem>Home</DropdownMenuItem>
+              </Link>
+              <Link href="/blogs" className="cursor-pointer">
+                <DropdownMenuItem>Blog</DropdownMenuItem>
+              </Link>
+              <Link href="/resume.pdf" target="_blank" className="cursor-pointer">
+                <DropdownMenuItem>Resume</DropdownMenuItem>
+              </Link>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </section>
     </main>
   );

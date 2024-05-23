@@ -36,7 +36,7 @@ export const GHLink = async () => {
         <span className="font-semibold text-zinc-300 dark:text-white">{totalContributions}</span>
       </span>
       <span className="space-y-0.5 px-6 pb-6 flex justify-between">
-        <span className="block text-sm">I make stuffs here.</span>
+        <span className="block text-sm font-semibold tracking-wider font-handwrite">I make stuffs here.</span>
         <h1 className="block text-sm text-white dark:text-zinc-400">Contributions</h1>
       </span>
       <span className="px-6 pb-6 flex flex-row flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-5">

@@ -20,7 +20,7 @@ export const DiscordCard = () => {
       className="hover:scale-95 duration-500 transform-gpu h-[3.333rem] flex gap-3 justify-center items-center rounded-lg text-white bg-[#7289D9] w-full cursor-copy"
     >
       <RiDiscordLine className="text-4xl" />
-      <span className="font-semibold pb-2 text-base">@falcon_clutch71</span>
+      <span className="font-semibold text-base">@falcon_clutch71</span>
     </span>
   )
 }
