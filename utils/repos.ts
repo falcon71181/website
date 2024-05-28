@@ -16,14 +16,14 @@ export const repos: Repo[] = [
     summary: "Live streaming platform along with community forum.",
   },
   {
+    name: "Post-It",
+    repository: "falcon71181/Post-It",
+    summary: "Interactive online platform that facilitates engaging discussions and community interaction.",
+  },
+  {
     name: "ReponeX",
     repository: "BugReportOnWeb/reponex",
     summary: "Central hub facilitating open-source collaboration and coordination.",
-  },
-  {
-    name: "FXX Forum",
-    repository: "falcon71181/fxx_forum",
-    summary: "Interactive online platform that facilitates engaging discussions and community interaction.",
   },
   {
     name: "TaskSync",
