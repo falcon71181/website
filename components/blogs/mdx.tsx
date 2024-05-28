@@ -5,10 +5,11 @@ import { postProcess, preProcess } from '@/lib/rehype-pre-raw';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypePrism from 'rehype-prism-plus';
 import CopyButton from './copy_button';
+import remarkGfm from 'remark-gfm';
 
 const options = {
   mdxOptions: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [preProcess, rehypePrism, postProcess],
   },
 };
