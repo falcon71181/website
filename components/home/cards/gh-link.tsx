@@ -39,7 +39,7 @@ export const GHLink = async () => {
         <span className="block text-sm font-semibold tracking-wider font-handwrite">I make stuffs here.</span>
         <h1 className="block text-sm text-white dark:text-zinc-400">Contributions</h1>
       </span>
-      <span className="px-6 pb-6 flex flex-row flex-wrap gap-x-2 sm:gap-x-3 md:gap-x-5">
+      <span className="px-6 pb-6 flex flex-row flex-wrap gap-x-1 sm:gap-x-2 md:gap-x-4">
         <GitHubStatsData label="Stars" value={stars} />
         <GitHubStatsData label="Followers" value={followers} />
         <GitHubStatsData label="PRs" value={prs} />
