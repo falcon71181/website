@@ -1,4 +1,6 @@
 import { LinkBadge } from "../ui/link-badge";
+import { Badge } from "../ui/badge";
+import Icon from "../icons/Icons";
 import Image from "next/image";
 
 export const About = () => {
@@ -16,7 +18,7 @@ export const About = () => {
           functional applications.
         </p>
         <p className="leading-6">
-          Currently in 6th sem at {" "}
+          Currently in 7th sem at {" "}
           <LinkBadge href={"https://www.chitkara.edu.in"} target="_blank" className="text-black dark:text-white font-semibold">
             <span className="text-neutral-400">/</span>Chitkara-University
           </LinkBadge>{" "}
@@ -24,20 +26,35 @@ export const About = () => {
         </p>
         <p className="leading-6">
           I am a human, and I make stuffs. I guess I can describe myself as {" "}
-          <LinkBadge href={"https://www.typescriptlang.org"} target="_blank" className="text-black dark:text-white font-semibold">
-            <span className="text-neutral-400">/</span>TypeScript
-          </LinkBadge>{" "}
+          <Badge
+            className='py-1 px-2 gap-1 rounded-md shadow'
+            variant='secondary'
+            key="typescript"
+          >
+            <Icon.TypeScriptIcon className='size-4' />
+            <p className='text-xs'>TypeScript</p>
+          </Badge>{" "}
           dev, learning {" "}
-          <LinkBadge href={"https://www.rust-lang.org"} target="_blank" className="text-black dark:text-white font-semibold">
-            <span className="text-neutral-400">/</span>Rust
-          </LinkBadge>{" "}
+          <Badge
+            className='py-1 px-2 gap-1 rounded-md shadow'
+            variant='secondary'
+            key="rust"
+          >
+            <Icon.RUSTIcon className='size-4' />
+            <p className='text-xs'>RUST</p>
+          </Badge>{" "}
           and loving it and got enough fullstack knowledge to create websites.
         </p>
         <p className="leading-6">
           I use {" "}
-          <LinkBadge href={"https://archlinux.org"} target="_blank" className="text-black dark:text-white font-semibold">
-            <span className="text-neutral-400">/</span>Arch Linux
-          </LinkBadge>{" "}
+          <Badge
+            className='py-1 px-2 gap-1 rounded-md shadow'
+            variant='secondary'
+            key="arch"
+          >
+            <Icon.ArchIcon className='size-4' />
+            <p className='text-xs'>Arch Linux</p>
+          </Badge>{" "}
           (btw) and strongly support the Free Software Movement. I believe that software should be open and free, with no shady data selling behind the scenes.
         </p>
       </div>
