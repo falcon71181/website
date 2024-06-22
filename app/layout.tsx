@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`scroll-smooth ${caveat.variable}`}>
         <Providers>
           <section className="h-screen w-screen flex justify-center">
-            <main className="h-full w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 flex flex-col transition-all duration-500">
+            <main className="h-full w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 flex flex-col transition-all duration-300">
               <NavBar />
               <div className="flex-grow">{children}</div>
               <Footer />
