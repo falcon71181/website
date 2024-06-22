@@ -1,6 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=next,ts,tailwind,github" />
+  <br/>
+  <a href="https://falcon71181.vercel.app/"><kbd>falcon71181.vercel.app</kbd></a>
+</p>
+<br/><br/>
 
-## Getting Started
+#### 🧬 Running locally for development
+
+## Installation
+1. Clone the repository to your local machine:
+```bash
+git clone https://github.com/falcon71181/website
+cd TaskSync
+```
+
+2. Navigate to the `client/` directory:
+```bash
+cd client/
+```
+
+3. Install client dependencies using your preferred package manager (e.g., bun, npm, yarn):
+```bash
+bun install
+```
+
+4. Create a `.env` file in the `client/` directory and add the following variables:
+```dotenv
+GITHUB_TOKEN=ghp_nch74h93bvu34vnb3487h987v3h4
+```
 
 First, run the development server:
 
@@ -28,9 +55,5 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
