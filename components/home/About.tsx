@@ -11,7 +11,7 @@ export const About = () => {
           <h1 className="text-black dark:text-white font-bold">
             Hi, I&apos;m Abhay Thakur ✌️
           </h1>
-          <h1 className="text-gray-700 dark:text-neutral-400 text-base font-semibold tracking-wide">- aka falcon71181</h1>
+          <h1 className="text-gray-700 dark:text-neutral-400 text-base font-semibold tracking-wide">- aka falcon71181 (Software Engineer @salescode.ai)</h1>
         </div>
         <p className="leading-6">
           I&apos;m a developer with a passion for building beautiful and

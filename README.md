@@ -11,7 +11,7 @@
 1. Clone the repository to your local machine:
 ```bash
 git clone https://github.com/falcon71181/website
-cd TaskSync
+cd website
 ```
 
 2. Navigate to the `client/` directory:
