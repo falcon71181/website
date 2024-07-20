@@ -21,9 +21,9 @@ export const repos: Repo[] = [
     summary: "Interactive online platform that facilitates engaging discussions and community interaction.",
   },
   {
-    name: "ReponeX",
-    repository: "BugReportOnWeb/reponex",
-    summary: "Central hub facilitating open-source collaboration and coordination.",
+    name: "rust-paper",
+    repository: "falcon71181/rust-paper",
+    summary: "Wallpaper manager made using RUST ( https://wallhaven.cc/ ) for Linux only",
   },
   {
     name: "TaskSync",
