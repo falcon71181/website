@@ -23,12 +23,12 @@ export const repos: Repo[] = [
   {
     name: "rust-paper",
     repository: "falcon71181/rust-paper",
-    summary: "Wallpaper manager made using RUST ( https://wallhaven.cc/ ) for Linux only",
+    summary: "Wallpaper manager made using RUST ( https://wallhaven.cc/ ) for Linux only.",
   },
   {
-    name: "TaskSync",
-    repository: "falcon71181/TaskSync",
-    summary: "Task manager application that allows users to perform CRUD operations.",
+    name: "hianime-data-fetcher",
+    repository: "falcon71181/hianime-data-fetcher",
+    summary: "fetch all data from ( https://hianime.to ) using web scraping and store in postgreSQL.",
   },
   {
     name: "ToDo-Rust",
