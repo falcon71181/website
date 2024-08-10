@@ -1,4 +1,4 @@
-import { cache, Suspense } from 'react';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -6,6 +6,7 @@ import { CustomMDX } from '@/components/blogs/mdx';
 import { getPosts } from '@/lib/blogs';
 import { reformatDate } from '@/lib/utils';
 import { TracingBeam } from '@/components/ui/tracing-beam';
+import Loader from '@/components/blogs/Loader';
 import "@/app/mdx.css";
 
 export const revalidate = 0;
@@ -34,12 +35,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }: { params: any }) {
-  const post = getPosts().find((post) => post.slug === params.slug);
+const BlogContent = async ({ slug }: { slug: string }) => {
+  const post = getPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
   }
+
   return (
     <div className='w-full p-3 mt-1'>
       <div className="flex text-sm text-secondaryDarker">
@@ -81,5 +83,13 @@ export default async function Blog({ params }: { params: any }) {
         </article>
       </TracingBeam>
     </div>
+  );
+};
+
+export default function Blog({ params }: { params: any }) {
+  return (
+    <Suspense fallback={<Loader />}>
+      <BlogContent slug={params.slug} />
+    </Suspense>
   );
 }

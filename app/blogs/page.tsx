@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { getPosts } from "@/lib/blogs";
 import Blogs from "./Blogs";
+import Loader from "@/components/blogs/Loader";
 
 export const metadata = {
   title: "Blogs",
@@ -11,7 +12,7 @@ export default async function PostsPage() {
   let allPosts = getPosts();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <Blogs allPosts={allPosts} />
     </ Suspense>
   );
